@@ -1,0 +1,48 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Login Result</title></head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 50%;
+
+}
+th{ background-color: blue;
+    color:pink;
+   }
+tr<text-align:center;}
+</style>
+<body>
+<h1> Admin logged in successfully with the following credentials </h1>
+<table border="2" solid green >
+    <tr> <th> Id</th>
+         <th> Name</th>
+         <th> Qualification </th>
+         <th> Email </th>
+         <th> Password </th>  </tr>
+<tr th:each="mess : ${admin}">
+     <td th:text="${mess.id}">1</td>
+     <td th:text="${mess.name}">1</td>
+    <td th:text="${mess.qualification}">1</td>
+    <td th:text="${mess.email}">1</td>
+     <td th:text="${mess.password}">1</td>
+</tr>
+</table>
+
+<form action="/tutorlogin">
+   <input type="submit" value="add tutor">
+</form>
+
+<form action="/registeredstudents">
+<input type="submit" value="get registered Students"/>
+    </form>
+
+<form action="/registeredtutors">
+    <input type="submit" value="get registered Tutors"/>
+</form>
+</body>
+</html><!--
+<p th:text="${admin.qualification}"></p>
+<p th:text="${admin.email}"></p>
+<p th:text="${admin.password}"></p>
+-->

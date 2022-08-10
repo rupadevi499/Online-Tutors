@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tutor Login Result</title>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 50%;
+
+}
+th{ background-color:black;
+    color:pink;
+   }
+tr{text-align:center; }
+</style>
+</head>
+<body>
+<h1> Tutor logged in successfully with the following credentials </h1>
+<table border="2" >
+    <tr>
+        <th> Id</th>
+        <th>Name </th>
+        <th> Qualification </th>
+        <th> Subject </th>
+        <th> Experience </th>
+        <th> Email</th>
+        <th> Password</th>
+
+    </tr>
+    <tr th:each="tutor : ${Tutor}">
+        <td th:text="${tutor.id}">1</td>
+        <td th:text="${tutor.name}">1</td>
+      <td th:text="${tutor.qualification}">1</td>
+        <td th:text="${tutor.subject}">1</td>
+        <td th:text="${tutor.experience}">1</td>
+        <td th:text="${tutor.email}">1</td>
+        <td th:text="${tutor.password}">1</td>
+    </tr>
+</table>
+</body>
+</html>

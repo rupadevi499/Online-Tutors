@@ -1,0 +1,45 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <style>
+table {
+  border-collapse: collapse;
+  width: 50%;
+
+}
+th{ background-color:green;
+    color:pink;
+   }
+tr{text-align:center; }
+</style>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th> Id</th>
+        <th>Name </th>
+        <th> Qualification </th>
+        <th> Subject </th>
+        <th> Email</th>
+        <th> Phone NUmber</th>
+        <th> Password</th>
+
+    </tr>
+  <tr th:each="mess : ${registeredList}">
+    <td th:text="${mess.id}">1</td>
+    <td th:text="${mess.name}">1</td>
+    <td th:text="${mess.qualification}">1</td>
+   <td th:text="${mess.subject}">1</td>
+   <td th:text="${mess.email}">1</td>
+   <td th:text="${mess.phno}">1</td>
+     <td th:text="${mess.password}">1</td>
+  </tr>
+</table>
+<form action="/StudentRemove">
+
+ <label>Enter the Student Id to remove</label>
+  <input type ="text" name="id">
+<input type="submit" value="click here to remove">
+</form>
+</body>
+</html>

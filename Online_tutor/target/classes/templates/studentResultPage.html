@@ -1,0 +1,49 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Student Result Page</title>
+    <style>
+table { border:2px solid black;
+  border-collapse: collapse;
+  width: 50%;
+
+}
+th{ background-color:green;
+    color:pink;
+   }
+tr{text-align:center; }
+</style>
+<body>
+<h1> Student logged in Successfully with the following Credentials</h1>
+<form action="/StudentSearch" >
+
+<table>
+    <tr>
+        <th> Id</th>
+        <th>Name </th>
+        <th> Qualification </td>
+        <th> Subject </th>
+        <th> Email</th>
+        <th> Phone NUmber</th>
+        <th> Password</th>
+    </tr>
+
+    <tr th:each="mess : ${student}">
+            <td th:text="${mess.id}">1</td>
+            <td th:text="${mess.name}">1</td>
+           <td th:text="${mess.qualification}">1</td>
+            <td th:text="${mess.subject}">1</td>
+          <td th:text="${mess.email}">1</td>
+            <td th:text="${mess.phno}">1</td>
+            <td th:text="${mess.password}">1</td>
+        </tr>
+
+</table>
+    <label>Search Tutor by Subject</label>
+
+        <input type="radio" name="maths" value="maths"></input><span>maths</span>
+        <input type="radio" name="english" value="english"></input><span>english</span>
+
+    <input type="submit" value="submit"></input>
+</form>
+</body>
+</html>

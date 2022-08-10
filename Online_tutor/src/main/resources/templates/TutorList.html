@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tutor List Page</title>
+</head>
+<body>
+<h1> Tutors list based on subject</h1>
+<table>
+    <tr>
+        <td> Id</td>
+        <td>Name </td>
+        <td> Qualification </td>
+        <td> Subject </td>
+        <td> Experience </td>
+        <td> Email</td>
+        <td> Phone NUmber</td>
+        <td> Password</td>
+    </tr>
+    <tr th:each="mess : ${tutorlist}">
+       <td th:text="${mess.id}">1</td>
+        <td th:text="${mess.name}">1</td>
+       <td th:text="${mess.qualification}">1</td>
+       <td th:text="${mess.subject}">1</td>
+       <td th:text="${mess.experience}">1</td>
+        <td th:text="${mess.email}">1</td>
+       <td th:text="${mess.phno}">1</td>
+        <td th:text="${mess.password}">1</td>
+    </tr>
+</table>
+
+</body>            
+</html>  
